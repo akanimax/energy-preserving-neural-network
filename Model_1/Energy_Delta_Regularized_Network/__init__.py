@@ -8,3 +8,4 @@ from __future__ import absolute_import
 from __future__ import division
 
 import Energy_Delta_Regularized_Network.DataSetup
+import Energy_Delta_Regularized_Network.NetworkBuilder
