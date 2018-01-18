@@ -1,4 +1,4 @@
-(env) animesh@animeshK-PC:~/Programming/Research/energy-preserving-neural-networks/Model_1$ python Experiment.py --depth 3 --epochs 30 --noenergy_delta_regularizer
+(env) animesh@animeshK-PC:~/Programming/Research/energy-preserving-neural-networks/Model_1$ python Experiment.py --depth 3 --epochs 30 
 
 Obtaining Data ...
 Extracting ../Data/MNIST_data/train-images-idx3-ubyte.gz
@@ -16,129 +16,128 @@ Test Data Images and Labels: (10000, 784) (10000, 10)
 
 Input Placeholder Tensors: Tensor("Input/Input_Labels:0", shape=(?, 784), dtype=float32) Tensor("Input/Input_Labels_1:0", shape=(?, 10), dtype=float32)
 Final output: Tensor("Layer3/BiasAdd:0", shape=(?, 10), dtype=float32)
-2018-01-18 16:08:06.636205: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX
+2018-01-18 16:07:11.137201: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX
 Starting the training process . . .
 
-epoch =  0 cost =  0.45068607
-accuracy =  0.8930624272409778
-dev_accuracy =  0.9142
+epoch =  0 cost =  5.7336307
+accuracy =  0.7615504947613504
+dev_accuracy =  0.8402
 
-epoch =  1 cost =  0.33726782
-accuracy =  0.9316247089639115
-dev_accuracy =  0.9394
+epoch =  1 cost =  5.7448096
+accuracy =  0.8597569848661234
+dev_accuracy =  0.8694
 
-epoch =  2 cost =  0.3064872
-accuracy =  0.9516880093131548
-dev_accuracy =  0.9528
+epoch =  2 cost =  3.3412619
+accuracy =  0.8653594295692666
+dev_accuracy =  0.8784
+       
+epoch =  3 cost =  4.290569
+accuracy =  0.87152575669383
+dev_accuracy =  0.8572
 
-epoch =  3 cost =  0.28996778
-accuracy =  0.9640206635622818
-dev_accuracy =  0.9598
+epoch =  4 cost =  3.666253
+accuracy =  0.8732901629802096
+dev_accuracy =  0.883
 
-epoch =  4 cost =  0.26967624
-accuracy =  0.9717876891734575
-dev_accuracy =  0.9668
+epoch =  5 cost =  4.048024
+accuracy =  0.878819848661234
+dev_accuracy =  0.8736
 
-epoch =  5 cost =  0.24835862
-accuracy =  0.9774810826542492
-dev_accuracy =  0.97
+epoch =  6 cost =  2.6375716
+accuracy =  0.8805478754365541
+dev_accuracy =  0.8718
 
-epoch =  6 cost =  0.2254866
-accuracy =  0.982119470314319
-dev_accuracy =  0.9734
+epoch =  7 cost =  3.1688967
+accuracy =  0.8804569266589057
+dev_accuracy =  0.8916
 
-epoch =  7 cost =  0.19505766
-accuracy =  0.9861212165308498
-dev_accuracy =  0.9744
+epoch =  8 cost =  3.5369663
+accuracy =  0.8850225552968568
+dev_accuracy =  0.8782
 
-epoch =  8 cost =  0.17469098
-accuracy =  0.989177095459837
-dev_accuracy =  0.9768
+epoch =  9 cost =  4.5163527
+accuracy =  0.887496362048894
+dev_accuracy =  0.8952
 
-epoch =  9 cost =  0.16936588
-accuracy =  0.9916145227008148
-dev_accuracy =  0.976
+epoch =  10 cost =  4.0129795
+accuracy =  0.8889697322467986
+dev_accuracy =  0.8784
 
-epoch =  10 cost =  0.1249803
-accuracy =  0.9933243597206054
-dev_accuracy =  0.9704
+epoch =  11 cost =  3.969111
+accuracy =  0.8849861757857974
+dev_accuracy =  0.8888
 
-epoch =  11 cost =  0.10898639
-accuracy =  0.994324796274738
-dev_accuracy =  0.973
+epoch =  12 cost =  3.5123568
+accuracy =  0.8889151629802096
+dev_accuracy =  0.8888
 
-epoch =  12 cost =  0.11892907
-accuracy =  0.9937427240977881
-dev_accuracy =  0.9762
+epoch =  13 cost =  3.7690864
+accuracy =  0.8911888824214202
+dev_accuracy =  0.885
 
-epoch =  13 cost =  0.06603528
-accuracy =  0.9948886786961583
-dev_accuracy =  0.9744
+epoch =  14 cost =  1.2021797
+accuracy =  0.8911888824214202
+dev_accuracy =  0.8974
 
-epoch =  14 cost =  0.036737077
-accuracy =  0.9948704889406287
-dev_accuracy =  0.9744
+epoch =  15 cost =  1.8915387
+accuracy =  0.8897882712456344
+dev_accuracy =  0.9068
 
-epoch =  15 cost =  0.031482384
-accuracy =  0.9960346332945286
-dev_accuracy =  0.9778
+epoch =  16 cost =  3.0317738
+accuracy =  0.8928623399301513
+dev_accuracy =  0.9074
 
-epoch =  16 cost =  0.026679315
-accuracy =  0.9956526484284052
-dev_accuracy =  0.9768
+epoch =  17 cost =  2.3824034
+accuracy =  0.8920438009313155
+dev_accuracy =  0.8986
 
-epoch =  17 cost =  0.0023278287
-accuracy =  0.9972351571594877
-dev_accuracy =  0.975
+epoch =  18 cost =  1.1771214
+accuracy =  0.8918800931315483
+dev_accuracy =  0.9022
 
-epoch =  18 cost =  0.01893515
-accuracy =  0.9970714493597206
-dev_accuracy =  0.9774
+epoch =  19 cost =  2.0622864
+accuracy =  0.8922075087310827
+dev_accuracy =  0.8992
 
-epoch =  19 cost =  0.011308296
-accuracy =  0.996416618160652
-dev_accuracy =  0.9786
+epoch =  20 cost =  1.7333981
+accuracy =  0.8947540745052387
+dev_accuracy =  0.9086
 
-epoch =  20 cost =  0.008606797
-accuracy =  0.9967258440046566
-dev_accuracy =  0.9784
+epoch =  21 cost =  1.3338428
+accuracy =  0.8948814027939465
+dev_accuracy =  0.9012
 
-epoch =  21 cost =  0.005772868
-accuracy =  0.9971442083818394
-dev_accuracy =  0.9784
+epoch =  22 cost =  2.8519316
+accuracy =  0.8960819266589057
+dev_accuracy =  0.904
 
-epoch =  22 cost =  0.0012769407
-accuracy =  0.997453434225844
-dev_accuracy =  0.9786
+epoch =  23 cost =  3.5927238
+accuracy =  0.8992287543655413
+dev_accuracy =  0.8916
 
-epoch =  23 cost =  0.038344793
-accuracy =  0.998435681024447
-dev_accuracy =  0.979
+epoch =  24 cost =  2.651267
+accuracy =  0.8994470314318975
+dev_accuracy =  0.9076
 
-epoch =  24 cost =  0.011645177
-accuracy =  0.997744470314319
-dev_accuracy =  0.9794
+epoch =  25 cost =  3.7393425
+accuracy =  0.9001018626309663
+dev_accuracy =  0.898
 
-epoch =  25 cost =  0.0009743234
-accuracy =  0.9976717112922002
-dev_accuracy =  0.9756
+epoch =  26 cost =  1.3413522
+accuracy =  0.899774447031432
+dev_accuracy =  0.9068
 
-epoch =  26 cost =  0.009710644
-accuracy =  0.9972715366705471
-dev_accuracy =  0.9812
+epoch =  27 cost =  1.7009294
+accuracy =  0.8989740977881258
+dev_accuracy =  0.911
 
-epoch =  27 cost =  0.0014571338
-accuracy =  0.9983447322467986
-dev_accuracy =  0.979
+epoch =  28 cost =  1.7411684
+accuracy =  0.9012478172293364
+dev_accuracy =  0.9002
 
-epoch =  28 cost =  0.027246067
-accuracy =  0.9974170547147846
-dev_accuracy =  0.9798
-
-epoch =  29 cost =  0.0005022746
-accuracy =  0.9977080908032596
-dev_accuracy =  0.9812
+epoch =  29 cost =  1.1805933
+accuracy =  0.898319266589057
+dev_accuracy =  0.9028
 Training complete . . .
-Obtained Test accuracy =  0.9787
+Obtained Test accuracy =  0.9005
 (env) animesh@animeshK-PC:~/Programming/Research/energy-preserving-neural-networks/Model_1$ 
-
