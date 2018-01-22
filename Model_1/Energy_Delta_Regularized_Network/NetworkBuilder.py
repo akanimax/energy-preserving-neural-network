@@ -41,6 +41,7 @@ def mk_graph(img_dim, num_labels, hidd_repr_size=512, depth=1):
         with tf.name_scope("Energy_conservation/Layer1"):
             energy_delta = tf.abs(tf.reduce_sum(tf.norm(tf_input_images, axis=-1))
                                   - tf.reduce_sum(tf.norm(lay1_out, axis=-1)))
+            tf.summary.scalar("Energy_delta/layer1", energy_delta)
 
         # attach histogram summaries to the trainable weights of this layer
         wt1, wt2 = neural_layer.trainable_weights
@@ -55,8 +56,10 @@ def mk_graph(img_dim, num_labels, hidd_repr_size=512, depth=1):
             lay_out = neural_layer(lay_out)
 
             with tf.name_scope("Energy_conservation/Layer" + str(lay_no)):
-                energy_delta = tf.add(energy_delta, (tf.abs(tf.reduce_sum(tf.norm(prev_out, axis=-1))
-                                                            - tf.reduce_sum(tf.norm(lay_out, axis=-1)))))
+                cur_delta = (tf.abs(tf.reduce_sum(tf.norm(prev_out, axis=-1))
+                                    - tf.reduce_sum(tf.norm(lay_out, axis=-1))))
+                energy_delta = tf.add(energy_delta, cur_delta)
+                tf.summary.scalar("Energy_delta/layer" + str(lay_no), cur_delta)
 
             # attach the weight summaries
             wt1, wt2 = neural_layer.trainable_weights
@@ -75,8 +78,11 @@ def mk_graph(img_dim, num_labels, hidd_repr_size=512, depth=1):
             output = lay1_out
 
         with tf.name_scope("Energy_conservation/Layer" + str(depth)):
-            energy_delta = tf.add(energy_delta, (tf.abs(tf.reduce_sum(tf.norm(lay_out, axis=-1))
-                                                        - tf.reduce_sum(tf.norm(output, axis=-1)))))
+            cur_delta = (tf.abs(tf.reduce_sum(tf.norm(lay_out, axis=-1))
+                                - tf.reduce_sum(tf.norm(output, axis=-1))))
+            energy_delta = tf.add(energy_delta, cur_delta)
+            if depth > 1:
+                tf.summary.scalar("Energy_delta/layer" + str(depth), cur_delta)
 
         print("Final output:", output)
 

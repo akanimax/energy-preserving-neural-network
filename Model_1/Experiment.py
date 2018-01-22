@@ -52,13 +52,19 @@ def main(_):
 
         # define the loss function
         with tf.name_scope("Loss"):
-            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=output, labels=labels))
+            ce = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=output, labels=labels))
 
             if FLAGS.energy_delta_regularizer:
-                loss += FLAGS.regularization_lambda * energy_delta
+                regularization = FLAGS.regularization_lambda * energy_delta
+                loss = ce + regularization
+
+                tf.summary.scalar("Cross_Entropy_Loss", ce)
+                tf.summary.scalar("Regularization_Loss", regularization)
+            else:
+                loss = ce
 
             # add scalar summary on this:
-            tf.summary.scalar("Loss", loss)
+            tf.summary.scalar("Total_Loss", loss)
 
         # define the Trainer
         with tf.name_scope("Trainer"):
