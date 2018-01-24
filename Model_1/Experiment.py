@@ -89,6 +89,7 @@ def main(_):
                   str(FLAGS.epochs) + "-epochs-" +
                   str(FLAGS.energy_delta_regularizer) + "-energy_regularization-" +
                   str(FLAGS.learning_rate) + "-learning_rate-" +
+                  str(FLAGS.regularization_lambda) + "-regularization_lambda-" +
                   str(FLAGS.batch_size) + "-batch_size")
 
     # Finally, define the training session:
